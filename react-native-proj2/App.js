@@ -5,6 +5,8 @@ import HomeScreen from './src/screens/HomeScreen';
 import ComponentsScreen from './src/screens/ComponentsScreen';
 import SampleScreen from './src/screens/SampleScreen';
 import GreetingsScreen from "./src/screens/GreetingsScreen";
+import ListScreen from "./src/screens/ListScreen";
+import ImageScreen from "./src/screens/ImageScreen";
 
 const Stack=createStackNavigator();
 
@@ -28,6 +30,14 @@ const App=()=>{
           <Stack.Screen
           name='Greetings'
           component={GreetingsScreen}
+          />
+          <Stack.Screen
+          name="List"
+          component={ListScreen}
+          />
+          <Stack.Screen
+          name="Image"
+          component={ImageScreen}
           />
         </Stack.Navigator>
     </NavigationContainer>

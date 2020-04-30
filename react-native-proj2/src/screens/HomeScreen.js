@@ -1,21 +1,32 @@
 import React from 'react';
-import { View,Text,Button,StyleSheet } from 'react-native';
+import { View,Text,Button,TouchableOpacity,StyleSheet } from 'react-native';
 
-const HomeScreen =(props)=>{
+const HomeScreen =({navigation})=>{
     return (
         <View>
             <Text style={styles.textStyle}>HomeScreen</Text>
             <Button 
                 title='Go to Components Screen!'
-                onPress={()=>{props.navigation.navigate('Components');}}
-            ></Button>
-            <Button
-                title='Go to Sample Screen'
-                onPress={()=>{props.navigation.navigate('Sample');}}
-            ></Button>
+                onPress={()=>{navigation.navigate('Components');}}
+            >
+            </Button>
+            <TouchableOpacity
+                onPress={()=>{navigation.navigate('Sample');}}
+            >
+               <Text style={styles.buttonText}>Go to Sample Screen</Text>
+            </TouchableOpacity>
             <Button
                 title='Go to Greetings Screen'
-                onPress={()=>{props.navigation.navigate('Greetings');}}
+                onPress={()=>{navigation.navigate('Greetings');}}
+            >
+            </Button>
+            <Button title='Go to List Screen'
+                onPress={()=>{navigation.navigate('List')}}
+            >
+            </Button>
+            <Button
+                title='Go to ImageScreen'
+                onPress={()=>{navigation.navigate('Image')}}
             >
             </Button>
         </View>
@@ -25,6 +36,10 @@ const styles=StyleSheet.create({
     textStyle: {
         fontSize:34,
         fontWeight:"bold",
+    },
+    buttonText:{
+        textAlign:"center",
+        marginVertical:20
     }
 })
 

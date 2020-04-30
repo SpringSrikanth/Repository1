@@ -7,17 +7,17 @@ function greeting(){
     console.log(hours)
     let message='';
 
-        if(hours>0 && hours<12){
+        if(hours>=0 && hours<12){
            return'Good Morning';
         }
-        else if(hours>12 && hours<17){
+        else if(hours>=12 && hours<=17){
 
             return 'Good Afternoon';
         }
        else if( hours>17 && hours<20){
            return 'Good Evening';
        }
-       else if( hours>21 && hours<24)
+       else if( hours>=20 && hours<=24)
        {
            return 'Good Night';
        }
