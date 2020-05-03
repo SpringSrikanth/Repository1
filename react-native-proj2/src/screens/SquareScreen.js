@@ -11,11 +11,14 @@ const SquareScreen =()=>{
     function setColor(color ,change){
         switch(color){
             case 'red':
-                return red+change>255 || red+change<0?null:setRed(red+change);
+                red+change>255 || red+change<0?null:setRed(red+change);
+                return;
             case 'green':
-                return green+change>255 || green+change<0?null:setGreen(green+change);
+                green+change>255 || green+change<0?null:setGreen(green+change);
+                return;
             case 'blue':
-                return blue+change>255 || blue+change<0?null:setBlue(blue+change);
+                blue+change>255 || blue+change<0?null:setBlue(blue+change);
+                return;
             default:
                 return;
             }
