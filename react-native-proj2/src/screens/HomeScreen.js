@@ -6,7 +6,7 @@ const HomeScreen =({navigation})=>{
         <View>
             <Text style={styles.textStyle}>HomeScreen</Text>
             <Button 
-                title='Go to Components Screen!'
+                title='Go to Components Screen'
                 onPress={()=>{navigation.navigate('Components');}}
             >
             </Button>
@@ -25,17 +25,17 @@ const HomeScreen =({navigation})=>{
             >
             </Button>
             <Button
-                title='Go to ImageScreen'
+                title='Go to Images Screen'
                 onPress={()=>{navigation.navigate('Image')}}
             >
             </Button>
             <Button 
-            title="Go to CounterScreen"
+            title="Go to Counter Screen"
             onPress={()=>{navigation.navigate('Counter')}}
             >
             </Button>
             <Button 
-            title="Go to ColorScreen"
+            title="Go to Colors Screen"
             onPress={()=>{navigation.navigate('Color')}}
             ></Button>
             <Button
@@ -43,6 +43,15 @@ const HomeScreen =({navigation})=>{
             onPress={()=>{navigation.navigate('Square')}}
             >
             </Button>
+            <Button
+            title="Go to Text Screen"
+            onPress={()=>{navigation.navigate('Text')}}
+            >
+            </Button>
+            <Button 
+            title ="Go to Text Screen Two"
+            onPress={()=>{navigation.navigate('TextScreenTwo')}}
+            ></Button>
         </View>
     );
 }
