@@ -12,6 +12,9 @@ import ColorScreen from "./src/screens/ColorScreen";
 import SquareScreen from "./src/screens/SquareScreen";
 import TextScreen from "./src/screens/TextScreen";
 import TextScreenTwo from "./src/screens/TextScreenTwo";
+import BoxScreen from "./src/screens/BoxScreen";
+import FlexModelScreen from "./src/screens/FlexModelScreen";
+
 
 
 const Stack=createStackNavigator();
@@ -64,6 +67,14 @@ const App=()=>{
           <Stack.Screen
           name="TextScreenTwo"
           component={TextScreenTwo}
+          />
+          <Stack.Screen
+          name="Box"
+          component={BoxScreen}
+          />
+          <Stack.Screen
+          name="FlexModel"
+          component={FlexModelScreen}
           />
         </Stack.Navigator>
     </NavigationContainer>

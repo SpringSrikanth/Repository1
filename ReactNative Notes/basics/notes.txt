@@ -1,0 +1,50 @@
+React Native:
+------------------------
+What is hook?
+Ans:A hook is a function that add some new functionalities to the functional component
+in react native.
+
+const [counter,setCounter]=useState(0);
+Array destucturing
+const colors=['red','green'];
+color[0];
+ans:"red"
+color[1];
+ans:"green"
+
+const [colorOne,colorTwo]=["red","green"];
+
+
+What is State:
+we don't modify state variable directly.
+we modify state variable using set method only
+State is containing data passing inside component itself only
+
+What is Props:
+props is a object we send data from parent to child component using props
+
+TemplateString with interpulation:
+`${var} hello ${var2}`
+
+ES6 Arrays
+setColors([...colors,randomRgb()])
+store result array
+
+Reducers
+Reducer is a function that manages to changes the object
+that managing changes to the object
+
+in reducer action means change the value like change default
+value for suppose the a value is 1 i want to change a=1 to
+a=2 by using action ,it refers to which one you need to change
+
+but payload means how much you want to modify means value to modify
+
+here state means current object 
+we want to modify state object we must and should rebuild the 
+state object from scratch
+
+dispatch means run my reducer
+
+action having two type of properties
+
