@@ -7,14 +7,14 @@ const SearchBar = ({term,onTermChange,onTermSubmit}) => {
         <View style={styles.backgroundStyle}>
            <Feather name="search" style={styles.iconStyle} />
            <TextInput 
-           autoCapitalize="none"
-           autoCorrect={false}
-           autoFocus={false}
-           style={styles.textInput}
-           placeholder="Search"
-           value={term}
-           onChangeText={newTerm =>{ onTermChange(newTerm)}}
-           onEndEditing={onTermSubmit}
+            autoCapitalize="none"
+            autoCorrect={false}
+            autoFocus={false}
+            style={styles.textInput}
+            placeholder="Search"
+            value={term}
+            onChangeText={newTerm =>{ onTermChange(newTerm)}}
+            onEndEditing={onTermSubmit}
            />
         </View>
     )
@@ -30,7 +30,8 @@ const styles= StyleSheet.create({
         borderRadius:6,
         borderWidth:1,
         borderColor:"grey",
-        flexDirection:"row"
+        flexDirection:"row",
+        marginBottom:10
     },
     textInput:{
         flex:1,

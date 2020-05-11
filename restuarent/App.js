@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator} from '@react-navigation/stack';
 import HomeScreen from "./src/Screens/HomeScreen";
+import ResultShowScreen from "./src/Screens/ResultShowScreen";
 
 const Stack=createStackNavigator();
 const App = () => {
@@ -13,6 +14,10 @@ const App = () => {
          name="Home"
          component={HomeScreen}
          options={{title: "Business Search"}}
+        />
+        <Stack.Screen
+        name="ResultShow"
+        component={ResultShowScreen}
         />
       </Stack.Navigator>
     </NavigationContainer>
