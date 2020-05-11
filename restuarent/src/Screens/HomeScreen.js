@@ -1,7 +1,7 @@
 import React ,{useState,useEffect}from 'react';
 import {View,Text,StyleSheet} from 'react-native';
 import SearchBar from "../Screens/Components/SearchBar";
-import RestuarentList from "../Screens/Components/RestuarentList";
+import ResultList from "./Components/ResultList";
 import useResults from "../Screens/hooks/useResults";
 
 const HomeScreen = () =>{
@@ -28,11 +28,9 @@ const HomeScreen = () =>{
              onTermSubmit={()=>{getSearchedResults(term)}}
              />
              {errorMessage.length!=0?<Text>{errorMessage}</Text>:null}
-             <Text>{term}</Text>
-             <Text>we have found {results.length} results</Text>
-             <RestuarentList title="Top Servings" results={filterResults(40,8)}/>
-             <RestuarentList title="Medium Servings" results={filterResults(8,4)} />
-             <RestuarentList title="Less Servings" results={filterResults(4,0)}/>
+             <ResultList title="Top Servings" results={filterResults(40,8)} imageUrl={baseImageUri}/>
+             <ResultList title="Medium Servings" results={filterResults(8,4)} imageUrl={baseImageUri} />
+             <ResultList title="Less Servings" results={filterResults(4,0)} imageUrl={baseImageUri}/>
         </View>
     )
 }
