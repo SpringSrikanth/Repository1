@@ -2,6 +2,7 @@ import React ,{useState,useEffect}from 'react';
 import { View,Text,StyleSheet,Image,ScrollView} from 'react-native';
 import Spoonacular from "./api/Spoonacular.js";
 const ResultShowScreen = ({route,navigation}) =>{
+    const regex = /(<([^>]+)>)/ig;
     const [result,setResult] = useState(null);
     const [errorMessage,setErrorMessage] = useState('');
     const {id} =route.params;
@@ -44,7 +45,7 @@ const ResultShowScreen = ({route,navigation}) =>{
             <Image style={styles.image} source={{uri: result.image}} />
             <Text style={{fontWeight:"bold"}}>Ready in minutes-{result.readyInMinutes}</Text>
             <Text style={{fontWeight:"bold"}}>Number of servings-{result.servings}</Text>
-            <Text style={{textAlign:"justify"}}>{result.summary}</Text>
+            <Text style={{textAlign:"justify"}}>{result.summary.replace(regex,"")}</Text>
             </ScrollView>
         </View>
     )
