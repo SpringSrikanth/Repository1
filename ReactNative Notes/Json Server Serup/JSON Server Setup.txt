@@ -1,0 +1,27 @@
+to setup server:
+https://www.npmjs.com/package/json-server
+
+create npm(node) project using command npm init
+press enter
+install packages 
+npm install json-server ngrok
+create db.json file and create endpoint inside json
+eg:{
+	"blogposts":[]	
+	
+	}
+write scripts inside package.json file
+"db":"json-server -w db.json"
+server default port is 3000 if want to change
+"db":"json-server -w db.json -p 2112"
+
+"tunnel":"ngrok http 2112"
+
+inside cmd hit npm run db command
+
+
+
+git clone
+----------
+git clone -b <BRANCH_NAME> https://github.com/SpringSrikanth/Node-Js.git
+
