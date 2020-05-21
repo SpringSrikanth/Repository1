@@ -6,7 +6,14 @@ import { Provider as BlogProvider } from "./src/Context/BlogContext";
 import HomeScreen from "./src/Screens/HomeScreen";
 import ShowScreen from './src/Screens/ShowScreen';
 import CreateScreen from './src/Screens/CreateScreen';
-import { FontAwesome  } from '@expo/vector-icons';
+import EditScreen from './src/Screens/EditScreen';
+import { FontAwesome ,EvilIcons } from '@expo/vector-icons';
+
+const LogoTitle=({title})=>{
+  return(
+    <Text>{title}</Text>
+  )
+}
 
 const  App = () => {
   const Stack = createStackNavigator();
@@ -18,8 +25,11 @@ const  App = () => {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={({navigation})=>({
+        options={({navigation,route})=>({
           headerTitle:'Blog List',
+          // headerTitle: props=>{
+          //   <LogoTitle {...props} />
+          // },
           headerRight:()=>{
             return ( 
               <TouchableOpacity
@@ -39,10 +49,37 @@ const  App = () => {
       <Stack.Screen 
       name="Show"
       component={ShowScreen}
+      options={({navigation,route})=>({
+        headerTitle: route.params.title,
+        headerRight:()=>{
+          return (
+            <TouchableOpacity
+              onPress={()=>{navigation.navigate('Edit',
+              {
+                title:route.params.title,
+                id:route.params.id,
+              }
+               )}}
+            >
+              <EvilIcons
+              name="pencil"
+              style={styles.editIconStyle}
+              />
+            </TouchableOpacity>
+          )
+        }
+      })}
       />
       <Stack.Screen 
       name="Create"
       component={CreateScreen}
+      options={({route})=>({
+        headerTitle: route.params.title
+      })}
+      />
+      <Stack.Screen 
+      name="Edit"
+      component={EditScreen}
       options={({route})=>({
         headerTitle: route.params.title
       })}
@@ -53,6 +90,11 @@ const  App = () => {
 }
 
 const styles = StyleSheet.create({
+  editIconStyle:{
+    fontSize:30,
+    marginRight:10,
+    marginVertical:10
+  }
 });
 
 export default () =>{

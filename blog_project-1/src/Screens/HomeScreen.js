@@ -2,24 +2,37 @@ import React,{useContext} from 'react';
 import {Text,View,FlatList,Button,TouchableOpacity,StyleSheet} from 'react-native';
 //use context object
 import {Context as BlogContext} from '../Context/BlogContext';
+import { convertedDate } from "../Service/Util";
 import { MaterialIcons,Feather } from '@expo/vector-icons';
 const HomeScreen = ({navigation}) =>{
     const {state,addBlogPost,deleteBlogPost}=useContext(BlogContext);
     return (
         <View style={{flex:1}}>
             {/* <Text>HomeScreen</Text> */}
-            <Button 
+            {/* <Button 
             title="Add Blog Post"
             onPress={addBlogPost}
-            />
+            /> */}
+            {state.length === 0 ? 
+                <Text style={
+                        {
+                        fontSize:24,
+                        marginHorizontal:10,
+                        marginVertical:15,
+                        color:"red"
+                        }
+                    }>
+                    No Blog Posts Found
+                </Text>
+            :null}
             <FlatList
             data={state}
             keyExtractor={(blogPost)=> `${blogPost.id}`}
             renderItem={({item})=>{
                 return (
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Show',{id:item.id})}}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Show',{id:item.id,title:item.title})}}>
                         <View style={styles.listStyle}>
-                            <Text  style={styles.title}>{item.title} - {item.id}</Text>
+                            <Text  style={styles.title}>{item.title} {convertedDate(item.createdDate)}</Text>
                             <TouchableOpacity
                                 onPress={()=>{deleteBlogPost(item.id);
                                 }}
@@ -49,7 +62,8 @@ const styles = StyleSheet.create({
         borderRadius:4
     },
     title:{
-        fontSize:20
+        fontSize:20,
+        fontWeight:"bold",
     },
     icon:{
         fontSize:26,
