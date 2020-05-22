@@ -18,7 +18,7 @@ const EditScreen = ({navigation,route})=>{
     }
     initialValues={{title:blogPost.title,content:blogPost.content}}
     onSubmit={(title, content)=>{
-        editBlogPost(id,title, content,()=>{
+        editBlogPost(id,title,content,blogPost.createdDate,()=>{
             // navigation.navigate('Home');
             navigation.pop();
         })

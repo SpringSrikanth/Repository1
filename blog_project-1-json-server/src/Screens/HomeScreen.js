@@ -1,11 +1,38 @@
-import React,{useContext} from 'react';
-import {Text,View,FlatList,Button,TouchableOpacity,StyleSheet} from 'react-native';
+import React,{useContext,useEffect} from 'react';
+import {ActivityIndicator,Text,View,FlatList,TouchableOpacity,StyleSheet} from 'react-native';
 //use context object
 import {Context as BlogContext} from '../Context/BlogContext';
 import { convertedDate } from "../Service/Util";
 import { MaterialIcons,Feather } from '@expo/vector-icons';
 const HomeScreen = ({navigation}) =>{
-    const {state,addBlogPost,deleteBlogPost}=useContext(BlogContext);
+    const {state,addBlogPost,deleteBlogPost,getAllBlogPosts}=useContext(BlogContext);
+    useEffect(()=>{
+        getAllBlogPosts();
+        const listener = navigation.addListener('focus',()=>{
+            getAllBlogPosts();
+        });
+        return listener;
+    },[])
+    if(state==null){
+        return (<View style={
+                    {
+                        flexDirection:'column',
+                        justifyContent:'center',
+                        alignItems:'center',
+                        marginVertical:12
+                    }
+                }
+                >
+                {/* <Text 
+                    style={{fontSize:20,fontWeight:"normal"}}
+                >loading</Text> */}
+                <ActivityIndicator
+                size="large"
+                color="grey"
+                />
+                </View>)
+    }
+
     return (
         <View style={{flex:1}}>
             {/* <Text>HomeScreen</Text> */}
