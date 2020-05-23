@@ -1,0 +1,16 @@
+Trucks-Application
+------------------
+Our app is used to show the maps related to trucks and using our current location
+in these applications
+screens like 
+1.TrackListScreen
+2.TrackShowScreen
+3.TrackCreateScreen
+4.SignUpScreen
+5.SignInScreen
+6.AccountScreen to Logout is there
+
+
+flow like this
+
+Mobile -> Express Api -> MongoDb

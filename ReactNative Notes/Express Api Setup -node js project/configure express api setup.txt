@@ -1,0 +1,20 @@
+Create node project using "npm init -y"
+need to install dependencies
+npm install bcrypt express jsonwebtoken mongoose nodemon
+
+write get request and start server using node src/index.js
+
+MongoDb setup free hosted copy
+goto cloud.mongodb.com
+rigister or login to the website
+create a cluster or build a cluster for free
+select region and click on create cluster button it will take some time
+after creating cluster click on connect
+add your ip address and give credential for login
+and click on connect with project and copy connection string
+
+
+mongodb+srv://root:<password>@cluster0-qis7v.gcp.mongodb.net/test?retryWrites=true&w=majority
+
+to install postman by using 
+getpostman.com
